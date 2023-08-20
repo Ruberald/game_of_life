@@ -4,18 +4,22 @@
 #include <SFML/Window/VideoMode.hpp>
 #include <SFML/Graphics/Texture.hpp>
 #include <SFML/Graphics/Sprite.hpp>
-#include <string>
-#include "display.hpp"
 
 #pragma once
 
-class Game {
+class Display {
 public:
-    Game(const int width, const int height);
-    void run();
+    Display();
+    sf::RenderWindow window;
+    sf::Sprite sprite;
+
+    void create(const int width, const int height);
+    void update();
 
 private:
-    Display display;
+    sf::Texture texture;
+    sf::Uint8* pixels;
+    const int ** Grid;
 
-    void update();
+    void init();
 };
