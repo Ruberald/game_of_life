@@ -1,7 +1,7 @@
 #include "game.hpp"
 
 int main() {
-    Game game = Game(1280, 720);
+    Game game = Game(800, 601);
     game.run();
 
     return 0;

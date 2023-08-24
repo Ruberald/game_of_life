@@ -4,6 +4,7 @@
 #include <SFML/Window/VideoMode.hpp>
 #include <SFML/Graphics/Texture.hpp>
 #include <SFML/Graphics/Sprite.hpp>
+#include <cstdint>
 
 #pragma once
 
@@ -14,12 +15,13 @@ public:
     sf::Sprite sprite;
 
     void create(const int width, const int height);
-    void update();
+    void drawPixel(const int x, const int y);
+    void update(uint32_t * grid);
 
 private:
     sf::Texture texture;
-    sf::Uint8* pixels;
-    const int ** Grid;
+    sf::Uint8* pixs;
 
     void init();
+    inline int returnPixel(const int, const int);
 };
